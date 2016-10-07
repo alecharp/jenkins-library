@@ -19,7 +19,8 @@ def call(def imageName) {
     }
 
     stage('Publish') {
-      image.push()
+      image.push 'latest'
+      image.push "${short_commit}"
     }
   }
 }
