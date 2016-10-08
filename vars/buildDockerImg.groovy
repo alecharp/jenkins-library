@@ -9,8 +9,7 @@ def call(def imageName) {
   node {
     stage('Checkout') {
       checkout scm
-      sh 'git rev-parse --short HEAD > GIT_COMMIT'
-      short_commit = readFile('GIT_COMMIT').trim()
+      short_commit = getGitCommit()
       currentBuild.description = "${short_commit}"
     }
 
