@@ -18,8 +18,9 @@ def call(def imageName) {
     }
 
     stage('Publish') {
-      image.push 'latest'
       image.push "${short_commit}"
+      milestone label: 'Do not push an old latest image'
+      image.push 'latest'
     }
   }
 }
