@@ -1,4 +1,4 @@
-#!groovy
+#!/usr/bin/env groovy
 
 def call(def imageName) {
   properties([
