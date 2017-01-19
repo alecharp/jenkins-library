@@ -2,8 +2,7 @@
 
 def call(def imageName) {
   properties([
-    buildDiscarder(logRotator(numToKeepStr: '10')),
-    pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '2m']])
+    buildDiscarder(logRotator(numToKeepStr: '10'))
   ])
 
   node {
