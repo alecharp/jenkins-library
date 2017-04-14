@@ -13,7 +13,7 @@ def call(def imageName) {
     }
 
     stage('Build') {
-      image = docker.build("${imageName}:${short_commit}")
+      image = docker.build("${imageName}:${short_commit}", "--squash .")
     }
 
     stage('Publish') {
