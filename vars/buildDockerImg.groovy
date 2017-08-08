@@ -9,7 +9,7 @@ def call(def imageName) {
     stage('Checkout') {
       checkout scm
       short_commit = getGitCommit()
-      currentBuild.description = "#${short_commit}"
+      currentBuild.description = "${imageName}:${short_commit}"
     }
 
     stage('Build') {
